@@ -48,6 +48,7 @@ def custom_append(input_list, value):
     """
     length = custom_len(input_list)
     input_list[length:length] = [value]
+    # input_list[-1:-1] = [value]
 
     return input_list
 
@@ -194,13 +195,15 @@ def custom_reverse(input_list):
         True
 
     """
-    swap_number = custom_len(input_list) // 2
+    input_list[:] = input_list[::-1]
 
-    for i in range(swap_number):
-        current_n = input_list[i]
-        current_neg_n = input_list[(i + 1) * -1]
-        input_list[i] = current_neg_n
-        input_list[(i + 1) * -1] = current_n
+    # swap_number = custom_len(input_list) // 2
+
+    # for i in range(swap_number):
+    #     current_n = input_list[i]
+    #     current_neg_n = input_list[(i + 1) * -1]
+    #     input_list[i] = current_neg_n
+    #     input_list[(i + 1) * -1] = current_n
 
 def custom_contains(input_list, value):
     """Return True or False if value is in the input_list.
